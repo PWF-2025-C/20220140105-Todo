@@ -28,8 +28,11 @@ Route::middleware('auth')->group(function () {
     // TODO Routes
     Route::get('/todo', [TodoController::class, 'index'])->name('todo.index');
     Route::get('/todo/create', [TodoController::class, 'create'])->name('todo.create');
+    Route::post('/todo', [TodoController::class, 'store'])->name('todo.store'); // <== INI WAJIB ADA
     Route::get('/todo/edit', [TodoController::class, 'edit'])->name('todo.edit');
 
     // User Routes
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
+
+    
 });
