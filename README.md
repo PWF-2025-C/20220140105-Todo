@@ -9,3 +9,7 @@ Tugas 3 (15 Maret 2025) :
 ![Screenshot 2025-03-15 195517](https://github.com/user-attachments/assets/75150c05-a49d-42ea-bb1d-832c8a8b6a44)
 
 ![Screenshot 2025-03-15 195610](https://github.com/user-attachments/assets/992290a3-cd87-457d-8fb0-424eadb49a6d)
+
+Tugas 5 (22 April 2025) :
+
+![Screenshot 2025-04-22 205838](https://github.com/user-attachments/assets/aded4285-d1d0-41c0-a4c5-bcc784811ed1)
