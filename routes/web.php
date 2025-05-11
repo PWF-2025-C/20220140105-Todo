@@ -3,6 +3,7 @@
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\TodoController;
     use App\Http\Controllers\UserController;
+    use App\Http\Controllers\CategoryController;
     use Illuminate\Support\Facades\Route;
 
     // Route utama (halaman welcome)
@@ -13,10 +14,10 @@
     // Route untuk dashboard, hanya bisa diakses oleh pengguna yang sudah login
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard'); 
+    })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-    require __DIR__.'/auth.php';
+    require __DIR__ . '/auth.php';
 
     // Route yang membutuhkan autentikasi
     Route::middleware('auth')->group(function () {
@@ -38,9 +39,12 @@
 
         Route::delete('/todo/{todo}', [TodoController::class, 'destroy'])->name('todo.destroy');
         Route::delete('/todo', [TodoController::class, 'destroyCompleted'])->name('todo.deleteallcompleted');
+
+        
+        Route::resource('category', CategoryController::class)->except(['show']);
     });
 
-    Route::middleware(['auth', 'admin'])->group(function() {
+    Route::middleware(['auth', 'admin'])->group(function () {
         // User Routes
         Route::get('/user', [UserController::class, 'index'])->name('user.index');
         Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
