@@ -17,7 +17,10 @@ class TodoController extends Controller
     {
         // dd('Todo index method is being called');
         // $todos = Todo.all();
-        $todos = Todo::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
+        $todos = Todo::with('category')
+            ->where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc')
+            ->get();
         // dd($todos);
 
         $todosCompleted = Todo::where('user_id', Auth::id())
