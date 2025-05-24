@@ -20,7 +20,7 @@
     require __DIR__ . '/auth.php';
 
     // Route yang membutuhkan autentikasi
-    Route::middleware('auth')->group(function () {
+    Route::middleware('auth', 'verified')->group(function () {
         // Profile
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
